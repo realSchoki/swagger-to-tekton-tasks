@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: argocd-api.stream-applications-x1-resource-tree.get
+spec:
+  steps:
+    - name: curl-command
+      image: curlimages/curl
+      command: ['sh']
+      args:
+        - -c 
+        - |
+          curl -o $(results.http-response-body.path) -s -w "%{http_code}" \
+          'https://api.ipify.org?format=json' \
+          | tee $(results.http-response-code.path)
+  results:
+    - name: http-response-body
+      description: The response body of the api call
+    - name: http-response-code
+      description: The response http status code of the call

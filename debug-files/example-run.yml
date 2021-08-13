@@ -1,0 +1,7 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: example-run
+spec:
+  taskRef:
+    name: argocd-api.stream-applications-x1-resource-tree.get

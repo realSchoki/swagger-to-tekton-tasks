@@ -1,0 +1,16 @@
+{
+  "name": "tekton-argocd-api-plugin-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.0.2",
+    "nunjucks": "^3.2.3"
+  }
+}
